@@ -10,20 +10,20 @@ const GoldenPage = () => {
       <div className="container">
         <div className="golden-page-content fade-in">
           <div className="golden-page-icon">
-            <i className="fas fa-crown"></i>
+            <i class="fas fa-gift"></i>
           </div>
-          <h2>Page d'Or Exclusif</h2>
-          <p>Les 200 premiers acheteurs du livre auront accès à une page d'or exclusive avec :</p>
+          <h2>Offre Exclusive</h2>
+          <p>Les 200 premiers acheteurs du livre auront accès à notre page d'or en plus des offres exclusives comme :</p>
           <div className="golden-features">
             <div className="golden-feature">
               <i className="fas fa-brain"></i>
               <h4>Série de MasterClass Premium Privée</h4>
-              <p>Une série de vidéos pour approfondir les concepts du livre</p>
+              <p>Coaching personnalisé avec des experts pour approfondir les concepts du livre</p>
             </div>
             <div className="golden-feature">
               <i className="fas fa-users"></i>
               <h4>Groupe Privé</h4>
-              <p>Accès à un groupe d'entrepreneurs graphistes pour échanger et réseauter</p>
+              <p>Accès à un groupe d'entrepreneurs, graphistes & freelancers pour échanger et réseauter</p>
             </div>
             <div className="golden-feature">
               <i className="fas fa-tools"></i>

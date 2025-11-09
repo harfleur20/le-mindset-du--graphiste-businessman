@@ -1,150 +1,96 @@
-import React, { useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
-import "./Preview.css";
+// Preview.jsx
+import React from 'react';
+import HTMLFlipBook from "react-pageflip";
+import './Preview.css'; // Assurez-vous d'avoir les styles appropriés
 
-// Configuration du worker PDFJS
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`;
-
-const Preview = () => {
-  const pdfUrl = "/livres/mindset.pdf";
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    console.log("PDF chargé avec succès:", numPages, "pages");
-    setNumPages(numPages);
-    setPageNumber(1);
-    setIsLoading(false);
-    setError(null);
-  };
-
-  const onDocumentLoadError = (error) => {
-    console.error("Erreur de chargement PDF:", error);
-    setIsLoading(false);
-    setError(
-      "Impossible de charger le PDF. Vérifiez que le fichier existe dans public/livres/"
-    );
-  };
-
-  const nextPage = () => {
-    if (pageNumber < numPages) setPageNumber(pageNumber + 1);
-  };
-
-  const prevPage = () => {
-    if (pageNumber > 1) setPageNumber(pageNumber - 1);
-  };
-
-  const reloadPdf = () => {
-    setIsLoading(true);
-    setError(null);
-    setPageNumber(1);
-  };
+function Preview() {
+  // Tableau des URLs de vos images (10 pages sans couverture)
+  const bookPages = [
+    '/images/preview/page1.jpg',      // Page 1
+    '/images/preview/page2.jpg',      // Page 2
+    '/images/preview/page3.jpg',      // Page 3
+    '/images/preview/page4.jpg',      // Page 4
+    '/images/preview/page5.jpg',      // Page 5
+    '/images/preview/page6.jpg',      // Page 6
+    '/images/preview/page7.jpg',      // Page 7
+    '/images/preview/page8.jpg',      // Page 8
+    '/images/preview/page9.jpg',      // Page 9
+    '/images/preview/page10.jpg',     // Page 10
+  ];
 
   return (
-    <section className="preview-section" id="preview">
-      <div className="container">
-        <h2 className="section-title">Feuilletez le Livre</h2>
-        <p className="section-subtitle">
-          Découvrez les premières pages gratuitement
+    <div className="preview-container" id='preview'>
+      {/* Titre et sous-titre */}
+      <div className="preview-header">
+        <h1 className="preview-title">Feuilletez le livre</h1>
+        <p className="preview-subtitle">
+          Découvrez un aperçu exclusif de notre MasterClass Premium
         </p>
-
-        <div className="pdf-container">
-          {isLoading && (
-            <div className="pdf-loading">
-              <div className="spinner"></div>
-              <p>Chargement du livre en cours...</p>
-            </div>
-          )}
-
-          {error && (
-            <div className="pdf-error">
-              <div className="error-icon">📚</div>
-              <h3>Livre non disponible</h3>
-              <p>{error}</p>
-              <div className="error-solutions">
-                <p>Pour résoudre le problème :</p>
-                <ul>
-                  <li>
-                    Vérifiez que le fichier <strong>mindset.pdf</strong> existe
-                    dans le dossier <code>public/livres/</code>
-                  </li>
-                  <li>Assurez-vous que le PDF n'est pas corrompu</li>
-                  <li>Vérifiez votre connexion internet</li>
-                </ul>
-                <div className="error-actions">
-                  <button onClick={reloadPdf} className="btn btn-primary">
-                    ↻ Réessayer
-                  </button>
-                  <a href="#achat" className="btn btn-secondary">
-                    📖 Voir les options d'achat
-                  </a>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {!isLoading && !error && (
-            <>
-              <div className="pdf-viewer">
-                <Document
-                  file={pdfUrl}
-                  onLoadSuccess={onDocumentLoadSuccess}
-                  onLoadError={onDocumentLoadError}
-                  loading={null}
-                >
-                  <Page
-                    pageNumber={pageNumber}
-                    width={Math.min(600, window.innerWidth - 40)}
-                    renderTextLayer={false}
-                    renderAnnotationLayer={false}
-                  />
-                </Document>
-              </div>
-
-              <div className="pdf-controls">
-                <button
-                  onClick={prevPage}
-                  disabled={pageNumber <= 1}
-                  className="nav-btn"
-                >
-                  ← Page précédente
-                </button>
-
-                <span className="page-info">
-                  Page {pageNumber} sur {numPages || "--"}
-                </span>
-
-                <button
-                  onClick={nextPage}
-                  disabled={pageNumber >= (numPages || 1)}
-                  className="nav-btn"
-                >
-                  Page suivante →
-                </button>
-              </div>
-
-              {/* Message pour inciter à acheter */}
-              {pageNumber >= 3 && numPages && pageNumber < numPages && (
-                <div className="preview-cta">
-                  <div className="cta-icon">✨</div>
-                  <h4>Ces premières pages vous plaisent ?</h4>
-                  <p>
-                    Le livre complet contient <strong>{numPages} pages</strong>{" "}
-                    de stratégies avancées !
-                  </p>
-                  <a href="#achat" className="btn btn-primary">
-                    Obtenir le livre complet
-                  </a>
-                </div>
-              )}
-            </>
-          )}
-        </div>
+        <div className="gold-divider"></div>
       </div>
-    </section>
+
+      <HTMLFlipBook 
+        width={400} 
+        height={550}
+        maxShadowOpacity={0.3}
+        drawShadow={true}
+        showCover={false}
+        startPage={0}
+        size='fixed'
+        className="masterclass-book"
+      >
+        {/* Pages du livre - 10 pages avec message incitatif sur la dernière */}
+        {bookPages.map((imageUrl, index) => (
+          <div className="page" key={`page-${index}`}>
+            <div className="page-content">
+              <div className={`page-container ${index === bookPages.length - 1 ? 'last-page-container' : ''}`}>
+                
+                {/* Numéro de page (sauf pour la dernière) */}
+                {index < bookPages.length - 1 && (
+                  <div className="page-number">
+                    Page {index + 1}
+                  </div>
+                )}
+
+                {/* Image de la page */}
+                <img 
+                  src={imageUrl} 
+                  alt={`Page ${index + 1} de la preview`}
+                  className="page-image"
+                  onError={(e) => {
+                    console.error(`Erreur de chargement: ${imageUrl}`);
+                    e.target.style.display = 'none';
+                  }}
+                />
+
+                {/* Message spécial pour la dernière page (page 10) */}
+                {index === bookPages.length - 1 && (
+                  <div className="upsell-overlay">
+                    <div className="upsell-content">
+                      <h3>La suite vous attend !</h3>
+                      <div className="gold-divider"></div>
+                      <p>Cette preview vous a plu ?</p>
+                      <p>Obtenez la version complète pour découvrir les stratégies avancées et bénéficier de l'accompagnement personnalisé de nos experts.</p>
+                      <ul className="benefits-list">
+                        <li>✅ Accès à toutes les pages du livre</li>
+                        <li>✅ MasterClass exclusive avec les auteurs</li>
+                        <li>✅ Coaching personnalisé</li>
+                        <li>✅ Support prioritaire</li>
+                      </ul>
+                      <button className="upsell-button">
+                        Obtenir le livre complet + MasterClass
+                      </button>
+                      <p className="upsell-note">Offre exclusive limitée dans le temps</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </HTMLFlipBook>
+    </div>
   );
-};
+}
 
 export default Preview;

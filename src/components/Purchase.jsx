@@ -6,10 +6,11 @@ const Purchase = () => {
       id: 1,
       title: "Version Physique",
       subtitle: "Pour l'Europe, USA et Canada",
-      image: "https://via.placeholder.com/200x280/4a00e0/ffffff?text=Livre+Physique",
+      image: "/amazon.png",
       features: [
         "Livraison internationale",
         "Format premium",
+        "Packaging soigné",
         "Accès à la page d'or"
       ],
       cta: {
@@ -22,15 +23,16 @@ const Purchase = () => {
       id: 2,
       title: "Version Physique",
       subtitle: "Pour le Cameroun",
-      image: "https://via.placeholder.com/200x280/4a00e0/ffffff?text=Livre+Physique",
+      image: "/academie.png",
       features: [
         "Livraison locale",
         "Format premium",
+        "Packaging soigné",
         "Accès à la page d'or"
       ],
       cta: {
-        text: "Commander via WhatsApp",
-        url: "https://wa.me/237XXXXXXXXX?text=Je%20souhaite%20commander%20le%20livre%20%22Le%20Mindset%20du%20Graphiste%20Businessman%22",
+        text: "Achetez via WhatsApp",
+        url: "https://wa.me/message/FCSKO4BE4CKQK1",
         type: "whatsapp",
         icon: "fab fa-whatsapp"
       }
@@ -39,16 +41,17 @@ const Purchase = () => {
       id: 3,
       title: "Version Ebook",
       subtitle: "Format numérique",
-      image: "https://via.placeholder.com/200x280/4a00e0/ffffff?text=Ebook",
+      image: "/chariow.png",
       features: [
         "Téléchargement immédiat",
         "Compatible tous appareils",
+        "Fichiers Annexes (sur Chariow)",
         "Accès à la page d'or"
       ],
       cta: [
         {
           text: "Acheter sur Chariow",
-          url: "https://chariow.com",
+          url: "https://we.academiecreatif.com/le-mindset-du-graphiste-businessman",
           type: "primary"
         },
         {

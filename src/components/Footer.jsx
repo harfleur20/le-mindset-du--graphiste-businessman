@@ -14,7 +14,8 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section">
             <h3>Le Mindset du Graphiste Businessman</h3>
-            <p>Transformez votre passion en entreprise prospère avec les stratégies éprouvées de Kenne Tsasse Francis.</p>
+            <p>Transformez votre passion en entreprise prospère avec les stratégies éprouvées de Kenne Tsasse Francis.</p><br />
+            <p>ISBN : 9798273028678 </p>
           </div>
           <div className="footer-section">
             <h4>Liens rapides</h4>
@@ -28,13 +29,20 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Contact</h4>
             <ul>
-              <li><a href="mailto:contact@example.com">contact@example.com</a></li>
+              <li><a href="mailto:contact@academiecreatif.com">contact@academiecreatif.com</a></li>
               <li><a href="https://wa.me/237XXXXXXXXX">WhatsApp</a></li>
             </ul>
+            <p>Tel : (+237) 680 95 03 19 / <br />(+237) 6 96 75 30 65</p>
+            <br /><p>Siège : Douala, Cameroun</p>
+          </div>
+          <div className="footer-section">
+            <h4>Note Importante</h4>
+            <p>Le Mindset du graphiste businessman écrit par Francis Kenne et publié en indépendant par l'académie des Créatifs de Five Design Group Sarl</p><br />
+            <p>Publié en : Juillet 2025</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2023 Le Mindset du Graphiste Businessman. Tous droits réservés.</p>
+          <p>&copy; 2025 Le Mindset du Graphiste Businessman. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

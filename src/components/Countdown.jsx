@@ -54,7 +54,7 @@ const Countdown = ({ onVisibilityChange }) => {
         <div className="promo-content">
           <span className="promo-tag">OFFRE SPÉCIALE</span>
           <span className="promo-text">
-            -10% avec le code : RELANCE10 sur la version Ebook du livre
+            -20% avec le code : RELANCE10 sur la version Ebook du livre
           </span>
           <div className="countdown">
             <div className="countdown-item">
