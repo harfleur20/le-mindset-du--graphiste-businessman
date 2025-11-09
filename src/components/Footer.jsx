@@ -24,6 +24,8 @@ const Footer = () => {
               <li><a href="#auteur" onClick={() => scrollToSection('auteur')}>L'Auteur</a></li>
               <li><a href="#livre" onClick={() => scrollToSection('livre')}>Le Livre</a></li>
               <li><a href="#achat" onClick={() => scrollToSection('achat')}>Acheter</a></li>
+              <li><a href="" onClick={() => scrollToSection('CGV')}>CGV</a></li>
+              <li><a href="" onClick={() => scrollToSection('conditions generales')}>Conditions générales</a></li>
             </ul>
           </div>
           <div className="footer-section">

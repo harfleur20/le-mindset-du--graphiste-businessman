@@ -1,5 +1,5 @@
 import React from 'react'
-import photofrancis from '../assets/photo-francis.png'
+import photofrancis from '../assets/photo-francis.webp'
 
 const Author = () => {
   return (

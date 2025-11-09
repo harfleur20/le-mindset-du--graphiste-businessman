@@ -1,0 +1,208 @@
+/* ===== SECTION ACHAT ===== */
+.purchase-section {
+  padding: 80px 0;
+}
+
+.purchase-options {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.purchase-option {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+
+.purchase-option:hover {
+  transform: translateY(-10px);
+}
+
+.option-header {
+  text-align: center;
+  /* margin-bottom: 1.5rem; */
+}
+
+.option-header h3 {
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+.option-subtitle {
+  color: var(--gray);
+}
+
+.option-image {
+  text-align: center;
+  /* margin-bottom: 1.5rem; */
+}
+
+.option-image img {
+  width: 100%;
+  max-width: 150px;
+}
+
+.option-features {
+  flex-grow: 1;
+  margin-bottom: 2rem;
+}
+
+.option-features ul {
+  list-style: none;
+}
+
+.option-features li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.option-features i {
+  color: var(--success);
+  margin-right: 10px;
+}
+
+.option-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+
+/* Styles pour l'offre premium */
+.premium-option {
+  position: relative;
+  border: 3px solid #FFD700 !important;
+  background: linear-gradient(135deg, #FFF8DC, #FFFACD) !important;
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.premium-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.discount-tag {
+  background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9em;
+  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+.offer-text {
+  background: linear-gradient(45deg, #FFD700, #B8860B);
+  color: #1a1a1a;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 0.7em;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.premium-pricing {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.old-price {
+  display: block;
+  font-size: 1em;
+  color: #999;
+  text-decoration: line-through;
+  margin-bottom: 5px;
+}
+
+.current-price {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  background: linear-gradient(45deg, #B8860B, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-premium {
+  background: linear-gradient(45deg, #FFD700, #B8860B) !important;
+  color: #1a1a1a !important;
+  border: none !important;
+  padding: 15px 30px !important;
+  font-size: 1.1em !important;
+  font-weight: bold !important;
+  border-radius: 25px !important;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
+  width: 100% !important;
+}
+
+.btn-premium:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4) !important;
+  background: linear-gradient(45deg, #FFE55C, #FFD700) !important;
+}
+
+.urgency-note {
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 10px;
+  font-size: 0.8em;
+  color: #B8860B;
+  font-weight: bold;
+}
+
+.urgency-note i {
+  margin-right: 5px;
+}
+
+/* Animation pour mettre en valeur l'offre premium */
+@keyframes premiumGlow {
+  0% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+  50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+  100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+}
+
+.premium-option {
+  animation: premiumGlow 2s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .premium-option {
+    transform: scale(1.02);
+  }
+  
+  .premium-badge {
+    top: -5px;
+    right: -5px;
+  }
+  
+  .current-price {
+    font-size: 1.5em;
+  }
+  
+  .btn-premium {
+    padding: 12px 20px !important;
+    font-size: 1em !important;
+  }
+}

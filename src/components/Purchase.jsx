@@ -1,24 +1,30 @@
 import React from 'react'
-
+import './Purchase.css'
 const Purchase = () => {
   const purchaseOptions = [
     {
       id: 1,
-      title: "Version Physique",
-      subtitle: "Pour l'Europe, USA et Canada",
-      image: "/amazon.png",
+      title: "Offre Premium Complète",
+      subtitle: "Livre + MasterClass Exclusive",
+      image: "/premium.png", // Vous pouvez créer/changer cette image
       features: [
-        "Livraison internationale",
-        "Format premium",
-        "Packaging soigné",
-        "Accès à la page d'or"
+        "Livre physique format premium",
+        "MasterClass avec les auteurs",
+        "Coaching personnalisé inclus",
+        "Accès communauté privée",
+        "Support prioritaire",
+        "Ressources exclusives"
       ],
+      price: "199€",
+      oldPrice: "299€",
+      discount: "-30%",
       cta: {
-        text: "Acheter sur Amazon",
-        url: "https://amazon.com",
-        type: "primary"
+        text: "Obtenir l'offre Premium",
+        url: "#", // Remplacez par votre lien
+        type: "premium"
       }
     },
+    
     {
       id: 2,
       title: "Version Physique",
@@ -69,14 +75,33 @@ const Purchase = () => {
         <h2 className="section-title">Obtenez Votre Exemplaire</h2>
         <div className="purchase-options">
           {purchaseOptions.map((option) => (
-            <div key={option.id} className="purchase-option fade-in">
+            <div key={option.id} className={`purchase-option fade-in ${option.id === 1 ? 'premium-option' : ''}`}>
+              
+              {/* Badge de réduction pour l'offre premium */}
+              {option.id === 1 && (
+                <div className="premium-badge">
+                  <span className="discount-tag">{option.discount}</span>
+                  <span className="offer-text">OFFRE EXCLUSIVE</span>
+                </div>
+              )}
+
               <div className="option-header">
                 <h3>{option.title}</h3>
                 <p className="option-subtitle">{option.subtitle}</p>
+                
+                {/* Prix pour l'offre premium */}
+                {option.id === 1 && (
+                  <div className="premium-pricing">
+                    <span className="old-price">{option.oldPrice}</span>
+                    <span className="current-price">{option.price}</span>
+                  </div>
+                )}
               </div>
+
               <div className="option-image">
                 <img src={option.image} alt={option.title} />
               </div>
+
               <div className="option-features">
                 <ul>
                   {option.features.map((feature, index) => (
@@ -86,6 +111,7 @@ const Purchase = () => {
                   ))}
                 </ul>
               </div>
+
               <div className="option-cta">
                 {Array.isArray(option.cta) ? (
                   option.cta.map((cta, index) => (
@@ -102,7 +128,7 @@ const Purchase = () => {
                 ) : (
                   <a
                     href={option.cta.url}
-                    className={`btn ${option.cta.icon ? 'btn-whatsapp' : `btn-${option.cta.type}`}`}
+                    className={`btn ${option.cta.type === 'premium' ? 'btn-premium' : option.cta.icon ? 'btn-whatsapp' : `btn-${option.cta.type}`}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -111,6 +137,14 @@ const Purchase = () => {
                   </a>
                 )}
               </div>
+
+              {/* Note d'urgence pour l'offre premium */}
+              {option.id === 1 && (
+                <div className="urgency-note">
+                  <i className="fas fa-clock"></i>
+                  Offre limitée dans le temps
+                </div>
+              )}
             </div>
           ))}
         </div>
