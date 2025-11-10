@@ -9,8 +9,8 @@ const Book = () => {
         <div className="book-content fade-in">
           <div className="book-details">
             <h3>Le Mindset du Graphiste Businessman</h3>
-            <p className="book-description">Ce livre est un carnet de route pour aider les graphistes, freelancers et les plus débutants à passer du statut de "graphiste qui survit" à celui d'entrepreneur créatif qui prospère. Il s'appuie sur le parcours de l'auteur, de ses débuts difficiles à un revenu stable et confortable de plus de 500 000 Francs CFA par mois.</p>
-            <p className="book-description">L'ouvrage n'est pas une théorie, mais une boîte à outils abordant des sujets cruciaux comme la gestion des clients malhonnêtes, la fixation des prix basés sur la valeur, et la construction d'un système pour automatiser son activité. Il insiste sur l'importance de développer un état d'esprit de "businessman" pour transformer la passion en un business solide.</p>
+            <p className="book-description">Le Mindset du Graphiste Businessman" est le guide essentiel pour tous les créatifs fatigués de la sous-tarification et des clients difficiles. Ce livre ne vous apprend pas à designer, mais à vendre votre valeur, à négocier vos contrats, et à structurer votre activité comme une véritable entreprise rentable.</p>
+            <p className="book-description">Chaque matin, vous vous sentez frustré. Vous avez le talent, l'expérience, mais vous passez plus de temps à courir après les paiements et à justifier vos tarifs qu'à créer. Si la phrase "C'est trop cher" est la seule chose que vous entendez, vous n'avez pas un problème de design, vous avez un problème de Mindset.</p>
             <div className="book-features">
               <h4>Ce que vous apprendrez :</h4>
               <ul>
