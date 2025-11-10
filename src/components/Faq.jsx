@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Faq.css'
 
+
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState(null)
 
