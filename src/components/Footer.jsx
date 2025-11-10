@@ -40,7 +40,7 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Note Importante</h4>
             <p>Le Mindset du graphiste businessman écrit par Francis Kenne et publié en indépendant par l'académie des Créatifs de Five Design Group Sarl</p><br />
-            <p>Publié en : Juillet 2025</p>
+            <p>Publié en : Juin 2025</p>
           </div>
         </div>
         <div className="footer-bottom">

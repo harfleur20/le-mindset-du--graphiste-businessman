@@ -24,7 +24,7 @@ function Preview() {
       <div className="preview-header">
         <h1 className="preview-title">Feuilletez le livre</h1>
         <p className="preview-subtitle">
-          Découvrez un aperçu exclusif de notre MasterClass Premium
+          Découvrez un aperçu du contenu de ce livre
         </p>
         <div className="gold-divider"></div>
       </div>

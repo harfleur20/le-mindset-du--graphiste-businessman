@@ -84,7 +84,7 @@ const Faq = () => {
         </div>
 
         <div className="faq-cta">
-          <p>Vous avez une question d'autres questions ?</p>
+          <p>Vous avez d'autres questions à poser ?</p>
           <a 
             href="https://wa.me/message/FCSKO4BE4CKQK1" 
             className="btn btn-whatsapp"

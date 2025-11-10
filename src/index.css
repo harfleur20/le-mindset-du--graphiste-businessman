@@ -34,6 +34,30 @@ body {
   overflow-x: hidden;
 }
 
+/* Style pour Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #f1f1f1 0%, #e1e1e1 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d89898 0%, #666 100%);
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #666 0%, #555 100%);
+}
+
+
+
+
+
 /* Typographie */
 h1,
 h2,
@@ -840,6 +864,33 @@ h4 {
     padding: 25px 15px;
     max-width: 100%;
   }
+
+  .hero{
+    margin-top: 16rem;
+    background: url(/public/cover-3.jpg) center / cover no-repeat;
+    height: auto;
+  }
+
+
+  .hero-text{
+    text-align: center;
+    margin-top: -52px;
+  }
+
+  .hero-cta{
+    align-items: center !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-cta .btn{
+    padding: 20px 20px !important;
+  }
+
+  .logo img{
+    width: 80px;
+    height: auto;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -849,6 +900,15 @@ h4 {
   
   .golden-page-content h2 {
     font-size: 2rem;
+  }
+
+  .logo img{
+    width: 80px;
+    height: auto;
+  }
+
+  .promo-banner{
+    position: fixed !important;
   }
   
   .golden-page-content > p {
