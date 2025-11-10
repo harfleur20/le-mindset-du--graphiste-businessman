@@ -10,6 +10,22 @@
   flex-wrap: wrap;
 }
 
+/* Classe .rouge uniquement pour la carte 2 */
+.purchase-option:nth-child(2) .rouge {
+    background-color: rgb(248, 220, 220);
+    border: 2px solid rgb(213, 198, 198);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #6c4242;
+    padding: 4px;
+}
+
+/* Masquer .rouge pour les autres cartes */
+.purchase-option:not(:nth-child(2)) .rouge {
+    display: none;
+}
+
 .purchase-option {
   background: white;
   border-radius: 10px;
@@ -29,26 +45,29 @@
 
 .option-header {
   text-align: center;
-  /* margin-bottom: 1.5rem; */
 }
 
 .option-header h3 {
   color: var(--primary);
   font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .option-subtitle {
-  color: var(--gray);
+  color: var(--primary);
+  font-size: 1rem;
 }
 
 .option-image {
   text-align: center;
-  /* margin-bottom: 1.5rem; */
+  margin: 1.5rem 0;
 }
 
 .option-image img {
   width: 100%;
   max-width: 150px;
+  height: auto;
 }
 
 .option-features {
@@ -58,17 +77,26 @@
 
 .option-features ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .option-features li {
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+  color: var(--primary);
 }
 
+/* Icônes en vert pour les cartes standards */
 .option-features i {
-  color: var(--success);
+  color: #28a745;
   margin-right: 10px;
+}
+
+/* Icônes en doré uniquement pour la carte premium */
+.premium-option .option-features i {
+  color: goldenrod !important;
 }
 
 .option-cta {
@@ -77,43 +105,48 @@
   gap: 10px;
 }
 
-
-
-/* Styles pour l'offre premium */
+/* ===== STYLES POUR L'OFFRE PREMIUM ===== */
 .premium-option {
   position: relative;
-  border: 3px solid #FFD700 !important;
-  background: linear-gradient(135deg, #FFF8DC, #FFFACD) !important;
+  border: 3px solid #5b4e09 !important;
+  background: linear-gradient(135deg, black, gray) !important;
   transform: scale(1.05);
   z-index: 2;
 }
 
+/* Texte spécifique pour la carte premium */
+.premium-option .option-header h3 {
+  color: white !important;
+  background: linear-gradient(45deg, #B8860B, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.premium-option .option-subtitle {
+  color: #ccc !important;
+}
+
+.premium-option .option-features li {
+  color: #ccc !important;
+}
+
 .premium-badge {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -20px;
+  right: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 3;
 }
 
-.discount-tag {
-  background: linear-gradient(45deg, #FF6B6B, #FF8E53);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-weight: bold;
-  font-size: 0.9em;
-  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
-}
-
 .offer-text {
   background: linear-gradient(45deg, #FFD700, #B8860B);
   color: #1a1a1a;
-  padding: 4px 8px;
+  padding: 8px 16px;
   border-radius: 10px;
-  font-size: 0.7em;
+  font-size: 1em;
   font-weight: bold;
   margin-top: 5px;
 }
@@ -184,6 +217,10 @@
 
 .premium-option {
   animation: premiumGlow 2s ease-in-out infinite;
+}
+
+.section-title h2{
+    margin-bottom: 50px;
 }
 
 /* Responsive */

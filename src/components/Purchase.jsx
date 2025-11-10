@@ -1,12 +1,13 @@
 import React from 'react'
 import './Purchase.css'
+
 const Purchase = () => {
   const purchaseOptions = [
     {
       id: 1,
       title: "Offre Premium Complète",
-      subtitle: "Livre + MasterClass Exclusive",
-      image: "/premium.png", // Vous pouvez créer/changer cette image
+      subtitle: "1 Livre + Packaging Exclusif",
+      // Pas d'image pour la carte premium
       features: [
         "Livre physique format premium",
         "MasterClass avec les auteurs",
@@ -15,9 +16,9 @@ const Purchase = () => {
         "Support prioritaire",
         "Ressources exclusives"
       ],
-      price: "199€",
-      oldPrice: "299€",
-      discount: "-30%",
+      price: "25 000 FCFA",
+      // oldPrice: "299€",
+      // discount: "-30%",
       cta: {
         text: "Obtenir l'offre Premium",
         url: "#", // Remplacez par votre lien
@@ -28,20 +29,27 @@ const Purchase = () => {
     {
       id: 2,
       title: "Version Physique",
-      subtitle: "Pour le Cameroun",
-      image: "/academie.png",
+      subtitle: "Pour le Cameroun, L'Europe , Canada et les USA",
+      image: "/amazon.png",
       features: [
-        "Livraison locale",
+        "Livraison locale & internationale",
         "Format premium",
         "Packaging soigné",
         "Accès à la page d'or"
       ],
-      cta: {
+      cta: [
+        {
         text: "Achetez via WhatsApp",
         url: "https://wa.me/message/FCSKO4BE4CKQK1",
         type: "whatsapp",
         icon: "fab fa-whatsapp"
-      }
+      },
+      {
+          text: "Acheter sur Amazon",
+          url: "https://amazon.com",
+          type: "secondary"
+        }
+      ]
     },
     {
       id: 3,
@@ -60,11 +68,11 @@ const Purchase = () => {
           url: "https://we.academiecreatif.com/le-mindset-du-graphiste-businessman",
           type: "primary"
         },
-        {
-          text: "Acheter sur Amazon",
-          url: "https://amazon.com",
-          type: "secondary"
-        }
+        // {
+        //   text: "Acheter sur Amazon",
+        //   url: "https://amazon.com",
+        //   type: "secondary"
+        // }
       ]
     }
   ]
@@ -98,9 +106,13 @@ const Purchase = () => {
                 )}
               </div>
 
-              <div className="option-image">
-                <img src={option.image} alt={option.title} />
-              </div>
+              {/* Image uniquement pour les cartes non-premium */}
+              {option.id !== 1 && option.image && (
+                <div className="option-image">
+                  <img src={option.image} alt={option.title} />
+                  <p className='rouge'>Whatsapp uniquement pour les <br />livraisons au Cameroun</p>
+                </div>
+              )}
 
               <div className="option-features">
                 <ul>

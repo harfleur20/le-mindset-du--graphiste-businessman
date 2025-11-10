@@ -597,6 +597,7 @@ h4 {
 .testimonials-section {
   padding: 80px 0;
   background-color: var(--light);
+  padding-bottom:135px;
 }
 
 .testimonials-carousel {

@@ -9,6 +9,7 @@ import Testimonials from './components/Testimonials';
 import GoldenPage from './components/GoldenPage';
 import Purchase from './components/Purchase';
 import Footer from './components/Footer';
+import Faq from './components/Faq';
 
 function App() {
   
@@ -25,6 +26,7 @@ function App() {
       <Testimonials />
       <GoldenPage />
       <Purchase />
+      <Faq />
       <Footer />
     </div>
   );
