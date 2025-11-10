@@ -1,5 +1,6 @@
 import React from 'react'
 import photofrancis from '../assets/photo-francis.webp'
+import photofrancis2 from '/photo-francis.png'
 
 const Author = () => {
   return (
@@ -8,8 +9,12 @@ const Author = () => {
         <h2 className="section-title">L'Auteur</h2>
         <div className="author-content fade-in">
           <div className="author-image">
-            <img 
+            <img className='pc-nxt'
               src={photofrancis} 
+              alt="Kenne Tsasse Francis"
+            />
+            <img className='mobile-nxt'
+              src={photofrancis2} 
               alt="Kenne Tsasse Francis"
             />
           </div>

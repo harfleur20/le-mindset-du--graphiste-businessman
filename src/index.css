@@ -101,6 +101,47 @@ h4 {
   box-shadow: 0 10px 20px rgba(7, 4, 14, 0.3);
 }
 
+/* Bouton principal avec brillance continue */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Animation de brillance permanente */
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent);
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(7, 4, 14, 0.3);
+}
+
 /* Bouton secondaire (contour violet) */
 .btn-secondary {
   background: transparent;
@@ -512,6 +553,10 @@ h4 {
   border-radius: 50%;
 }
 
+.mobile-nxt{
+  display: none;
+}
+
 .author-info {
   flex: 2;
 }
@@ -866,9 +911,24 @@ h4 {
   }
 
   .hero{
-    margin-top: 16rem;
+    margin-top: 19rem;
     background: url(/public/cover-3.jpg) center / cover no-repeat;
     height: auto;
+  }
+
+  .header{
+    padding: 0 15px;
+  }
+
+  .promo-text{
+    font-size: 1.09rem !important;
+    padding: 10px;
+    width: 85%;
+  }
+
+  .hero-subtitle{
+    font-size: 1rem;
+    padding: 0 20px;
   }
 
 
@@ -879,7 +939,7 @@ h4 {
 
   .hero-cta{
     align-items: center !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 20px !important;
   }
 
   .hero-cta .btn{
@@ -890,6 +950,36 @@ h4 {
     width: 80px;
     height: auto;
   }
+
+  .pc-nxt{
+    display: none
+  }
+
+  .author-image img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+.mobile-nxt{
+  display: block;
+}
+
+
+.author-info h3{
+  text-align: center;
+  line-height: 1.23;
+  margin-top: -10px;
+  margin-bottom: -1px;
+  padding: 10px;
+}
+
+.author-bio{
+  text-align: justify;
+  padding: 20px;
+  margin-bottom: -18px;
+}
+
 
 }
 
