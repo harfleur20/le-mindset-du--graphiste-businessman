@@ -1,4 +1,5 @@
 import React from 'react';
+import Chatbot from './Chatbot';
 import Countdown from './components/Countdown';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -16,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-
+      <Chatbot />
       <Countdown />
       <Header />
       <Hero />
