@@ -65,8 +65,8 @@ const Purchase = () => {
       ],
       cta: [
         {
-          text: "Acheter sur Chariow",
-          url: "https://we.academiecreatif.com/le-mindset-du-graphiste-businessman",
+          text: "Acheter maintenant",
+          url: "https://we.academiecreatif.com/le-mindset-du-graphiste-businessman/checkout",
           type: "primary"
         }
       ]
