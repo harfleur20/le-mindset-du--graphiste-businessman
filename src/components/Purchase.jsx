@@ -11,13 +11,14 @@ const Purchase = () => {
       subtitle: "1 Livre + Packaging Exclusif",
       features: [
         "Livre physique format premium",
-        "MasterClass avec les auteurs",
+        "Masterclass exclusive",
         "Coaching personnalisé inclus",
         "Accès communauté privée",
-        "Support prioritaire",
-        "Ressources exclusives"
+        "Support client prioritaire",
+        "Ressources exclusives",
+        "Livraison gratuite (CMR ONLY)"
       ],
-      price: "25 000 FCFA",
+      price: "30 000 FCFA",
       cta: {
         text: "Obtenir l'offre Premium",
         url: "#",
@@ -31,9 +32,11 @@ const Purchase = () => {
       image: "/academie.png",
       features: [
         "Livraison locale & internationale",
-        "Format premium",
+        "Format papier de qualité",
+        "Accès aux fichiers annexes",
+        "Masterclass exclusive",
         "Packaging soigné",
-        "Accès à la page d'or"
+        "Livraison aux frais de l'acheteur"
       ],
       cta: [
         {
@@ -95,7 +98,7 @@ const Purchase = () => {
               {option.id !== 1 && option.image && (
                 <div className="option-image">
                   <img src={option.image} alt={option.title} />
-                  <p className='rouge'>Whatsapp uniquement pour les <br />livraisons au Cameroun</p>
+                  {/* <p className='rouge'>Whatsapp uniquement pour les <br />livraisons au Cameroun</p> */}
                 </div>
               )}
 
