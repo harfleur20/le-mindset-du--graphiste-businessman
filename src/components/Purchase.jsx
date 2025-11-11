@@ -34,7 +34,7 @@ const Purchase = () => {
         "Livraison locale & internationale",
         "Format papier de qualité",
         "Accès aux fichiers annexes",
-        "Masterclass exclusive",
+        "Masterclass générale",
         "Packaging soigné",
         "Livraison aux frais de l'acheteur"
       ],
