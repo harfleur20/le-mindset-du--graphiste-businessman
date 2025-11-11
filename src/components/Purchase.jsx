@@ -21,7 +21,7 @@ const Purchase = () => {
       price: "30 000 FCFA",
       cta: {
         text: "Obtenir l'offre Premium",
-        url: "#",
+        url: "https://we.academiecreatif.com/offre-package-or/checkout",
         type: "premium"
       }
     },
