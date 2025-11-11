@@ -17,6 +17,24 @@
   animation: float 3s ease-in-out infinite;
 }
 
+/* Package de conseil personnalisé */
+.message.bot .advice-package {
+  background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+  border: 2px solid #32679d;
+  box-shadow: 0 4px 20px rgba(50, 103, 157, 0.15);
+}
+
+.message.bot .advice-package .package-title {
+  color: #32679d;
+  /* border-bottom-color: gray; */
+}
+
+.message.bot .advice-package .package-price {
+  color: #1e40af;
+  font-size: 20px;
+  font-weight: 800;
+}
+
 .chat-bubble:hover {
   transform: scale(1.1);
   box-shadow: 0 12px 30px rgba(50, 103, 157, 0.6);
@@ -31,6 +49,9 @@
 .bubble-icon {
   font-size: 24px;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  color: white;
+  margin-top: -14px;
+  font-weight: 600;
 }
 
 .bubble-pulse {
@@ -173,7 +194,10 @@
 /* Packages avec espacement */
 .message.bot .package {
   margin-bottom: 24px;
-  padding: 0;
+  padding: 16px;
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  background: #fafbfc;
 }
 
 .message.bot .package:last-child {
@@ -185,9 +209,9 @@
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 12px;
-  color: #374151;
-  padding-bottom: 6px;
-  border-bottom: 1px solid #e5e7eb;
+  color: #1f2937;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #32679d;
 }
 
 /* Prix du package */
@@ -195,7 +219,7 @@
   font-size: 18px;
   font-weight: 700;
   color: #32679d;
-  margin-bottom: 6px;
+  margin: 8px 0;
 }
 
 /* Note du package */
@@ -203,11 +227,12 @@
   font-size: 14px;
   color: #6b7280;
   font-style: italic;
+  margin: 8px 0;
 }
 
 /* Items de package */
 .message.bot .package-item {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-size: 14px;
   color: #4b5563;
   padding-left: 0;
@@ -219,7 +244,7 @@
 
 /* Feature items */
 .message.bot .feature-item {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-size: 14px;
   color: #4b5563;
   padding-left: 0;
@@ -227,6 +252,59 @@
 
 .message.bot .feature-item:last-child {
   margin-bottom: 0;
+}
+
+/* Sections de fonctionnalités */
+.message.bot .feature-section {
+  margin: 16px 0;
+  padding: 0;
+}
+
+.message.bot .feature-section:first-child {
+  margin-top: 0;
+}
+
+.message.bot .feature-section:last-child {
+  margin-bottom: 0;
+}
+
+.message.bot .feature-section .section-title {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #374151;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Boutons d'action dans les packages */
+.message.bot .package-action {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed #e5e7eb;
+}
+
+.message.bot .action-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #32679d 0%, #603f15 100%);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(50, 103, 157, 0.3);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.message.bot .action-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(50, 103, 157, 0.4);
+  color: white;
+  text-decoration: none;
 }
 
 /* Espacement entre packages */
@@ -246,6 +324,20 @@
   padding-top: 16px;
   border-top: 1px solid #e5e7eb;
   text-align: center;
+}
+
+/* Texte simple (pour les messages sans HTML) */
+.message.bot p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.message.bot p:first-child {
+  margin-top: 0;
+}
+
+.message.bot p:last-child {
+  margin-bottom: 0;
 }
 
 /* Suggestions */
@@ -432,6 +524,15 @@
     margin-bottom: 16px;
   }
   
+  .message.bot .package {
+    padding: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .message.bot .package-title {
+    font-size: 15px;
+  }
+  
   .chat-input-container {
     padding: 16px;
   }
@@ -465,4 +566,29 @@
 
 .messages-container::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+/* Support tactile amélioré */
+@media (hover: none) and (pointer: coarse) {
+  .chat-bubble:hover {
+    transform: none;
+  }
+  
+  .send-btn:hover:not(:disabled) {
+    transform: none;
+  }
+  
+  .close-btn:hover {
+    background: none;
+  }
+  
+  .suggestion-btn:hover {
+    transform: none;
+    background: rgba(50, 103, 157, 0.08);
+  }
+  
+  .message.bot .action-button:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(50, 103, 157, 0.3);
+  }
 }
