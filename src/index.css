@@ -415,7 +415,7 @@ h4 {
 .hero {
   height: 100vh;
   padding: 140px 0 80px;
-  background: url("../public/images/cover.jpg") center/cover no-repeat;
+  background: url("../images/cover.jpg") center/cover no-repeat;
   position: relative;
   margin-top: 140px;
 }
@@ -887,6 +887,33 @@ h4 {
   display: inline-block;
   border: 2px solid var(--accent);
 }
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero{
+    /* margin-top: 14rem !important ; */
+    background: url(/cover-3.jpg) center / cover no-repeat;
+    height: auto;
+  }
+  
+  .pc-nxt{
+    display: none
+  }
+
+  .author-image img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+.mobile-nxt{
+  display: block;
+}
+}
+
+
+
+
+
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
@@ -911,8 +938,8 @@ h4 {
   }
 
   .hero{
-    margin-top: 18rem;
-    background: url(/public/cover-3.jpg) center / cover no-repeat;
+    /* margin-top: 18rem !important; */
+    background: url(/cover-3.jpg) center / cover no-repeat;
     height: auto;
   }
 
@@ -974,14 +1001,24 @@ h4 {
   padding: 10px;
 }
 
-.author-bio{
+.author-bio {
   text-align: justify;
   padding: 20px;
   margin-bottom: -18px;
+  hyphens: auto;
+  word-spacing: -0.5px;
+  letter-spacing: -0.2px;
 }
 
 .book-details{
   padding: 0 20px;
+}
+
+.book-description{
+  text-align: justify;
+  hyphens: auto;
+  word-spacing: -0.5px;
+  letter-spacing: -0.2px;
 }
 
 .book-details h3
@@ -1019,9 +1056,9 @@ h4 {
     height: auto;
   }
 
-  .promo-banner{
+  /* .promo-banner{
     position: fixed !important;
-  }
+  } */
   
   .golden-page-content > p {
     font-size: 1.1rem;
@@ -1092,6 +1129,9 @@ h4 {
     flex-direction: column;
   }
 
+  .hero{
+    margin-top: 0;
+  }
   .hero-title {
     font-size: 2.5rem;
   }
@@ -1173,24 +1213,11 @@ h4 {
     display: none;
   }
 
-  /* Overlay pour le menu mobile */
-  .nav::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: -1;
-  }
-
+  
   .nav-open::before {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto; /* permettre la fermeture en cliquant sur l'overlay */
   }
 
   /* Ajustements généraux mobile */
