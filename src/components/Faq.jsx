@@ -28,7 +28,7 @@ const Faq = () => {
     },
     {
       question: "Comment accéder à la page d'or mentionnée ?",
-      answer: "Après votre achat, vous recevrez un email avec vos identifiants d'accès à la page d'or. Cette plateforme privée contient : des templates téléchargeables, des ressources bonus, des vidéos exclusives, et une communauté d'entraide avec d'autres lecteurs."
+      answer: "Après votre achat de package premium, vous recevrez un lien contenant des ressources exclusives, mises à jour, et bonus. Assurez-vous de vérifier votre email (y compris les spams) pour trouver le lien d'accès et ainsi votre nom inscrit sur la siteweb comme contribution officiel."
     },
     {
       question: "Le coaching personnalisé est-il limité dans le temps ?",
