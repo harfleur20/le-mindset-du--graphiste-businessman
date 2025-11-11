@@ -28,7 +28,7 @@ const Purchase = () => {
       id: 2,
       title: "Version Physique",
       subtitle: "Pour le Cameroun, L'Europe , Canada et les USA",
-      image: "/amazon.png",
+      image: "/academie.png",
       features: [
         "Livraison locale & internationale",
         "Format premium",
@@ -37,16 +37,16 @@ const Purchase = () => {
       ],
       cta: [
         {
-          text: "Achetez via WhatsApp",
+          text: "Commandez WhatsApp",
           url: "https://wa.me/message/FCSKO4BE4CKQK1",
           type: "whatsapp",
           icon: "fab fa-whatsapp" // ✅ Icône correcte
         },
-        {
-          text: "Acheter sur Amazon",
-          url: "https://amazon.com",
-          type: "secondary"
-        }
+        // {
+        //   text: "Acheter sur Amazon",
+        //   url: "https://amazon.com",
+        //   type: "secondary"
+        // }
       ]
     },
     {
