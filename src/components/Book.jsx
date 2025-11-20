@@ -18,7 +18,7 @@ const Book = () => {
                 <li><i className="fas fa-check"></i> Fixer vos prix basés sur la valeur créée</li>
                 <li><i className="fas fa-check"></i> Construire un système pour automatiser votre activité</li>
                 <li><i className="fas fa-check"></i> Développer un état d'esprit de businessman</li>
-                <li><i className="fas fa-check"></i> Atteindre un revenu stable de 500 000 FCFA/mois</li>
+                {/* <li><i className="fas fa-check"></i> Atteindre un revenu stable de 500 000 FCFA/mois</li> */}
               </ul>
             </div>
           </div>
