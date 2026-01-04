@@ -232,11 +232,9 @@ h4 {
   color: white;
   padding: 10px 0;
   text-align: center;
-  /* Changement ici : position relative au lieu de fixed */
   position: relative; 
   z-index: 1001;
   width: 100%;
-  /* Suppression du margin-top qui servait pour la navbar fixe */
   margin-top: 0; 
 }
 
@@ -410,8 +408,8 @@ h4 {
 
 
 .hero {
-  min-height: 100vh; 
-  padding: 100px 0; 
+  min-height: calc(100vh - 140px);; 
+  padding: 85px 0; 
   background: url("../images/cover.jpg") center/cover no-repeat;
   position: relative;
   margin-top: 0;
