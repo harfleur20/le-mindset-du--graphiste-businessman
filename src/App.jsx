@@ -12,13 +12,16 @@ import Purchase from './components/Purchase';
 import Footer from './components/Footer';
 import Faq from './components/Faq';
 
-function App() {
-  
 
+import MobileStickyCTA from './components/MobileStickyCTA';
+
+function App() {
   return (
     <div className="App">
+      {/* Le compte à rebours est placé en premier, tout en haut */}
+      <Countdown onVisibilityChange={() => {}} />
+      
       <Chatbot />
-      <Countdown />
       <Header />
       <Hero />
       <Author />
@@ -29,6 +32,8 @@ function App() {
       <Purchase />
       <Faq />
       <Footer />
+
+      <MobileStickyCTA />
     </div>
   );
 }

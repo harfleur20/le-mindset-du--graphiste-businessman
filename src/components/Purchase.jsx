@@ -21,7 +21,7 @@ const Purchase = () => {
       price: "30 000 FCFA",
       cta: {
         text: "Obtenir l'offre Premium",
-        // url: "https://we.academiecreatif.com/offre-package-or/checkout",
+        url: "https://we.academiecreatif.com/offre-package-or/checkout",
         type: "premium"
       }
     },
@@ -66,7 +66,7 @@ const Purchase = () => {
       cta: [
         {
           text: "Acheter maintenant",
-          // url: "https://we.academiecreatif.com/le-mindset-du-graphiste-businessman/checkout",
+          url: "https://we.academiecreatif.com/le-mindset-du-graphiste-businessman/checkout",
           type: "primary"
         }
       ]

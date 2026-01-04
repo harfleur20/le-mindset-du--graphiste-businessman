@@ -10,7 +10,7 @@ const Countdown = ({ onVisibilityChange }) => {
   const [isActive, setIsActive] = useState(true);
 
   useEffect(() => {
-    const countdownDate = new Date("2025-12-31T23:59:59"); // ⭐ MODIFIEZ LA DATE
+    const countdownDate = new Date("2026-12-31T23:59:59"); // MODIFIEZ LA DATE
     
     const timer = setInterval(() => {
       const now = new Date().getTime();

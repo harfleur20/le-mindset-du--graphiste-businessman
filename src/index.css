@@ -54,10 +54,6 @@ body {
   background: linear-gradient(180deg, #666 0%, #555 100%);
 }
 
-
-
-
-
 /* Typographie */
 h1,
 h2,
@@ -230,17 +226,18 @@ h4 {
   animation: fadeIn 0.8s ease-out;
 }
 
-/* ===== BANNIÈRE PROMOTIONNELLE ===== */
+/* ===== BANNIÈRE PROMOTIONNELLE (MODIFIÉE) ===== */
 .promo-banner {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   padding: 10px 0;
   text-align: center;
-  position: fixed;
-  z-index: 999;
+  /* Changement ici : position relative au lieu de fixed */
+  position: relative; 
+  z-index: 1001;
   width: 100%;
-  top: 0;
-  margin-top: 70px; /* Compensation pour la navbar fixe */
+  /* Suppression du margin-top qui servait pour la navbar fixe */
+  margin-top: 0; 
 }
 
 .promo-content {
@@ -249,7 +246,7 @@ h4 {
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  margin-top: 25px;
+  margin-top: 10px; /* Ajustement mineur */
 }
 
 /* Badge promotion */
@@ -291,9 +288,10 @@ h4 {
   margin-top: 5px;
 }
 
-/* ===== HEADER & NAVIGATION ===== */
+/* ===== HEADER & NAVIGATION (MODIFIÉE) ===== */
 .header {
-  position: fixed;
+  /* Changement ici : sticky au lieu de fixed pour suivre le flux */
+  position: sticky; 
   top: 0;
   left: 0;
   right: 0;
@@ -318,7 +316,6 @@ h4 {
 }
 
 /* Logo */
-
 .logo {
   display: flex;
   align-items: center;
@@ -411,13 +408,13 @@ h4 {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* ===== SECTION HERO ===== */
+
 .hero {
-  height: 100vh;
-  padding: 140px 0 80px;
+  min-height: 100vh; 
+  padding: 100px 0; 
   background: url("../images/cover.jpg") center/cover no-repeat;
   position: relative;
-  margin-top: 140px;
+  margin-top: 0;
 }
 
 /* Overlay dégradé sur l'image de fond seulement */
@@ -443,6 +440,7 @@ h4 {
   justify-content: space-between;
   gap: 50px;
   z-index: 2; /* Le contenu est au-dessus de l'overlay */
+  position: relative; /* Ajout pour z-index */
 }
 
 .hero-text {
@@ -504,12 +502,6 @@ h4 {
   justify-content: center;
   position: relative;
   z-index: 2;
-}
-
-.hero-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
 }
 
 /* Couverture du livre avec effet 3D */
@@ -611,8 +603,6 @@ h4 {
   flex: 2;
   padding-right: 60px;
 }
-
-
 
 .book-details h3 {
   font-size: 2rem;
@@ -887,184 +877,6 @@ h4 {
   display: inline-block;
   border: 2px solid var(--accent);
 }
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-  .hero{
-    /* margin-top: 14rem !important ; */
-    background: url(/cover-3.jpg) center / cover no-repeat;
-    height: auto;
-  }
-  
-  .pc-nxt{
-    display: none
-  }
-
-  .author-image img {
-    width: 100%;
-    max-width: 200px;
-    border-radius: 50%;
-}
-
-.mobile-nxt{
-  display: block;
-}
-}
-
-
-
-
-
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .golden-page-section {
-    padding: 60px 0;
-    background: 
-      linear-gradient(
-        135deg, 
-        rgba(50, 103, 157, 0.75) 0%, 
-        rgba(96, 63, 21, 0.65) 100%
-      ),
-      url('/cover-2.jpg') center/cover no-repeat;
-  }
-  
-  .golden-features {
-    gap: 20px;
-  }
-  
-  .golden-feature {
-    padding: 25px 15px;
-    max-width: 100%;
-  }
-
-  .hero{
-    /* margin-top: 18rem !important; */
-    background: url(/cover-3.jpg) center / cover no-repeat;
-    height: auto;
-  }
-
-  .header{
-    padding: 0 15px;
-  }
-
-  .promo-text{
-    font-size: 1.09rem !important;
-    padding: 10px;
-    width: 85%;
-  }
-
-  .hero-subtitle{
-    font-size: 1rem;
-    padding: 0 20px;
-  }
-
-
-  .hero-text{
-    text-align: center;
-    margin-top: -52px;
-  }
-
-  .hero-cta{
-    align-items: center !important;
-    margin-bottom: 20px !important;
-  }
-
-  .hero-cta .btn{
-    padding: 20px 20px !important;
-  }
-
-  .logo img{
-    width: 80px;
-    height: auto;
-  }
-
-  .pc-nxt{
-    display: none
-  }
-
-  .author-image img {
-    width: 100%;
-    max-width: 200px;
-    border-radius: 50%;
-}
-
-.mobile-nxt{
-  display: block;
-}
-
-
-.author-info h3{
-  text-align: center;
-  line-height: 1.23;
-  margin-top: -10px;
-  margin-bottom: -1px;
-  padding: 10px;
-}
-
-.author-bio {
-  text-align: justify;
-  padding: 20px;
-  margin-bottom: -18px;
-  hyphens: auto;
-  word-spacing: -0.5px;
-  letter-spacing: -0.2px;
-}
-
-.book-details{
-  padding: 0 20px;
-}
-
-.book-description{
-  text-align: justify;
-  hyphens: auto;
-  word-spacing: -0.5px;
-  letter-spacing: -0.2px;
-}
-
-.book-details h3
- {
-    font-size: 1.9rem;
-    color: var(--primary);
-    margin-bottom: 1.6rem;
-    line-height: 1.3;
-    text-align: center;
-    margin-top: -20px;
-}
-
-.book-cover-large img{
-  width: 300px;
-}
-
-.preview-container{
-  min-height: 30px;
-}
-
-
-}
-
-@media (max-width: 480px) {
-  .golden-page-section {
-    padding: 50px 0;
-  }
-  
-  .golden-page-content h2 {
-    font-size: 2rem;
-  }
-
-  .logo img{
-    width: 80px;
-    height: auto;
-  }
-
-  /* .promo-banner{
-    position: fixed !important;
-  } */
-  
-  .golden-page-content > p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-  }
-}
 
 /* ===== FOOTER ===== */
 .footer {
@@ -1141,8 +953,151 @@ h4 {
   }
 }
 
+/* Media Query 1024px */
+@media (max-width: 1024px) {
+  .hero{
+    /* Modification: margin-top plus nécessaire */
+    background: url(/cover-3.jpg) center / cover no-repeat;
+    height: auto;
+  }
+  
+  .pc-nxt{
+    display: none
+  }
+
+  .author-image img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+  }
+
+  .mobile-nxt{
+    display: block;
+  }
+}
+
 /* Mobiles (768px et moins) */
 @media (max-width: 768px) {
+  .golden-page-section {
+    padding: 60px 0;
+    background: 
+      linear-gradient(
+        135deg, 
+        rgba(50, 103, 157, 0.75) 0%, 
+        rgba(96, 63, 21, 0.65) 100%
+      ),
+      url('/cover-2.jpg') center/cover no-repeat;
+  }
+  
+  .golden-features {
+    gap: 20px;
+  }
+  
+  .golden-feature {
+    padding: 25px 15px;
+    max-width: 100%;
+  }
+
+  .hero{
+    /* Modification: margin-top plus nécessaire */
+    background: url(/cover-3.jpg) center / cover no-repeat;
+    height: auto;
+    padding: 60px 0; /* Ajustement padding */
+  }
+
+  .header{
+    padding: 0 15px;
+  }
+
+  .promo-text{
+    font-size: 1.09rem !important;
+    padding: 10px;
+    width: 85%;
+  }
+
+  .hero-subtitle{
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  .hero-text{
+    text-align: center;
+    margin-top: 0; /* Suppression margin négatif */
+  }
+
+  .hero-cta{
+    align-items: center !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero-cta .btn{
+    padding: 20px 20px !important;
+  }
+
+  .logo img{
+    width: 80px;
+    height: auto;
+  }
+
+  .pc-nxt{
+    display: none
+  }
+
+  .author-image img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+  }
+
+  .mobile-nxt{
+    display: block;
+  }
+
+  .author-info h3{
+    text-align: center;
+    line-height: 1.23;
+    margin-top: -10px;
+    margin-bottom: -1px;
+    padding: 10px;
+  }
+
+  .author-bio {
+    text-align: justify;
+    padding: 20px;
+    margin-bottom: -18px;
+    hyphens: auto;
+    word-spacing: -0.5px;
+    letter-spacing: -0.2px;
+  }
+
+  .book-details{
+    padding: 0 20px;
+  }
+
+  .book-description{
+    text-align: justify;
+    hyphens: auto;
+    word-spacing: -0.5px;
+    letter-spacing: -0.2px;
+  }
+
+  .book-details h3 {
+    font-size: 1.9rem;
+    color: var(--primary);
+    margin-bottom: 1.6rem;
+    line-height: 1.3;
+    text-align: center;
+    margin-top: -20px;
+  }
+
+  .book-cover-large img{
+    width: 300px;
+  }
+
+  .preview-container{
+    min-height: 30px;
+  }
+
   /* Navigation mobile */
   .mobile-menu-toggle {
     display: flex;
@@ -1178,21 +1133,11 @@ h4 {
     animation: slideIn 0.3s ease forwards;
   }
 
-  .nav li:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-  .nav li:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-  .nav li:nth-child(3) {
-    animation-delay: 0.3s;
-  }
-  .nav li:nth-child(4) {
-    animation-delay: 0.4s;
-  }
-  .nav li:nth-child(5) {
-    animation-delay: 0.5s;
-  }
+  .nav li:nth-child(1) { animation-delay: 0.1s; }
+  .nav li:nth-child(2) { animation-delay: 0.2s; }
+  .nav li:nth-child(3) { animation-delay: 0.3s; }
+  .nav li:nth-child(4) { animation-delay: 0.4s; }
+  .nav li:nth-child(5) { animation-delay: 0.5s; }
 
   .nav a {
     display: block;
@@ -1212,7 +1157,6 @@ h4 {
   .nav a::after {
     display: none;
   }
-
   
   .nav-open::before {
     opacity: 1;
@@ -1224,7 +1168,6 @@ h4 {
   .promo-content {
     flex-direction: column;
     gap: 10px;
-    
   }
 
   .hero-title {
@@ -1250,13 +1193,13 @@ h4 {
     padding-top: 70px;
   }
 
+  /* Modification importante pour le mobile : la bannière n'est plus margin-top 70px */
   .promo-banner {
-    margin-top: 70px; /* Hauteur approximative de la navbar */
+    margin-top: 0; 
     position: relative;
     padding: 10px 0;
     text-align: center;
     z-index: 999;
-    margin-top: 70px;
   }
 
   .promo-text {
@@ -1264,7 +1207,7 @@ h4 {
   }
 }
 
-/* Petits mobiles (480px et moins) */
+/* Petits mobiles (576px et moins) */
 @media (max-width: 576px) {
   .countdown {
     gap: 10px;
@@ -1276,7 +1219,7 @@ h4 {
   }
 
   .hero {
-    padding: 120px 0 50px;
+    padding: 80px 0 50px; /* Ajustement padding */
   }
 
   .author-section,
@@ -1311,9 +1254,76 @@ h4 {
     padding: 10px 20px;
     font-size: 0.9rem;
   }
+  
+  .golden-page-section {
+    padding: 50px 0;
+  }
+  
+  .golden-page-content h2 {
+    font-size: 2rem;
+  }
+
+  .logo img{
+    width: 80px;
+    height: auto;
+  }
+
+  .golden-page-content > p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
 }
 
 /* Animation pour les liens quand le menu s'ouvre */
 .nav-open .nav a.fade-in {
   animation: fadeInUp 0.5s ease forwards;
+}
+
+
+/* ========================================= */
+/* ===== MOBILE STICKY CTA ===== */
+/* ========================================= */
+
+.mobile-sticky-container {
+  display: none;
+}
+@media (max-width: 768px) {
+  
+  /* Le conteneur (la barre blanche en bas) */
+  .mobile-sticky-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    /* Positionnement Fixe en bas */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    
+    /* Style de la barre */
+    background: rgba(255, 255, 255, 0.95); 
+    backdrop-filter: blur(5px); 
+    padding: 12px 20px; 
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1); 
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .feu {
+    font-size: 10px;
+    margin-left: 4px;
+  }
+
+  /* Le bouton lui-même */
+  .sticky-btn {
+    width: 80%; 
+    padding: 15px 0; 
+    font-size: 14px;
+  }
+
+  body {
+    padding-bottom: 80px;
+  }
 }
