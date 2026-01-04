@@ -495,10 +495,10 @@
 
 @media (max-width: 480px) {
   .chat-bubble {
-    bottom: 20px;
+    bottom: 140px;
     right: 20px;
-    width: 55px;
-    height: 55px;
+    width: 35px;
+    height: 35px;
   }
   
   .chat-window {
