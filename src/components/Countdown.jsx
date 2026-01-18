@@ -10,7 +10,7 @@ const Countdown = ({ onVisibilityChange }) => {
   const [isActive, setIsActive] = useState(true);
 
   useEffect(() => {
-    const countdownDate = new Date("2026-12-31T23:59:59"); // MODIFIEZ LA DATE
+    const countdownDate = new Date("2026-02-05T23:59:59"); // MODIFIEZ LA DATE
     
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -54,7 +54,7 @@ const Countdown = ({ onVisibilityChange }) => {
         <div className="promo-content">
           <span className="promo-tag">OFFRE SPÉCIALE</span>
           <span className="promo-text">
-            -20% avec le code : RELANCE10 sur la version Ebook du livre
+            -50% avec le code : <span className="mindsetcolor">MINDSET2026</span> sur la version Ebook du livre
           </span>
           <div className="countdown">
             <div className="countdown-item">
