@@ -148,6 +148,11 @@ Vous pouvez réessayer dans quelques instants, ou contacter directement l'équip
     setSuggestions([]);
   };
 
+  const parseBold = (text) =>
+    text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+      i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+    );
+
   const renderMessage = (message) => {
     if (message.sender === 'bot' && message.text.includes('<div')) {
       return <div dangerouslySetInnerHTML={{ __html: message.text }} />;
@@ -163,10 +168,10 @@ Vous pouvez réessayer dans quelques instants, ou contacter directement l'équip
         if (!trimmedLine) return null;
 
         if (/^(\d+\.|-)\s+/.test(trimmedLine)) {
-          return <p key={i} className="message-list-item">{trimmedLine}</p>;
+          return <p key={i} className="message-list-item">{parseBold(trimmedLine)}</p>;
         }
 
-        return <p key={i}>{trimmedLine}</p>;
+        return <p key={i}>{parseBold(trimmedLine)}</p>;
       });
 
       if (message.sender !== 'bot' || !message.actions?.length) {

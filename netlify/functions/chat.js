@@ -3,6 +3,16 @@ import { getRelevantKnowledge } from "../../src/data/chatKnowledge.js";
 const HF_API_URL = "https://router.huggingface.co/v1/chat/completions";
 const DEFAULT_MODEL = "meta-llama/Llama-3.1-8B-Instruct";
 
+const formatAnswer = (text) => {
+  return text
+    .replace(/\b(MINDSET2026)\b/g, "**$1**")
+    .replace(/(-50\s*%)/g, "**$1**")
+    .replace(/(\d[\d\s.,]*FCFA)/g, "**$1**")
+    .replace(/\b(Ebook digital|Ebook|version physique|livre physique|Offre Premium Complète|Offre Premium|Premium)\b/g, "**$1**")
+    .replace(/([.!?])\s+(Vous pouvez également|N'oubliez pas|Si vous préférez|Pour la version physique|Pour profiter|Pour commander)/g, "$1\n\n$2")
+    .replace(/\*{4,}/g, "**");
+};
+
 const makeAnswerConcise = (answer) => {
   const cleanAnswer = answer
     .replace(/https?:\/\/\S+/g, "")
@@ -95,7 +105,8 @@ Réponds comme une vraie humaine dans un tchat : naturel, chaleureux, direct, ja
 Utilise uniquement les informations fournies dans les données ci-dessous.
 Si l'information n'est pas disponible, dis-le simplement et propose de contacter l'équipe sur WhatsApp.
 Garde les réponses utiles et adaptées : court si la question est simple, un peu plus complet si le client demande une liste, des faits ou des détails.
-Réponds avec des paragraphes courts. Si tu donnes plusieurs points, mets-les obligatoirement sur des lignes séparées avec des tirets, jamais dans un seul paragraphe.
+Réponds avec des paragraphes courts. Sépare chaque idée distincte sur une nouvelle ligne. Si tu donnes plusieurs points, mets-les obligatoirement sur des lignes séparées avec des tirets, jamais dans un seul paragraphe.
+Met en gras les éléments clés avec des doubles astérisques : **MINDSET2026**, **-50%**, les prix en FCFA, **Ebook**, **Premium**, **version physique**.
 Ne colle jamais les liens complets dans le texte de réponse. Les boutons d'action seront ajoutés séparément.
 Tu dois agir comme une vraie conseillère commerciale : écouter le besoin, reformuler brièvement, rassurer, puis suggérer l'offre la plus adaptée.
 Quand le visiteur hésite, pose au maximum une question utile au lieu de réciter tout le catalogue.
@@ -151,11 +162,12 @@ ${history || "Aucun historique."}
     }
 
     const conciseAnswer = makeAnswerConcise(answer);
+    const formattedAnswer = formatAnswer(conciseAnswer);
 
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify({ answer: conciseAnswer, actions: getActionsForMessage(message, conciseAnswer) }),
+      body: JSON.stringify({ answer: formattedAnswer, actions: getActionsForMessage(message, formattedAnswer) }),
     };
   } catch (error) {
     return { statusCode: 500, headers, body: JSON.stringify({ error: error.message || "Erreur serveur" }) };
