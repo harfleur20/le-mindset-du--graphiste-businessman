@@ -1,5 +1,20 @@
 # React + Vite
 
+## Assistant IA Hugging Face
+
+Le chatbot appelle l'endpoint serveur `/api/chat`, qui utilise Hugging Face sans exposer la cle API dans le navigateur.
+
+1. Creez un token gratuit sur Hugging Face.
+2. Copiez `.env.example` vers `.env.local`.
+3. Renseignez :
+
+```bash
+HF_TOKEN=VOTRE_TOKEN_HUGGING_FACE
+HF_MODEL=meta-llama/Llama-3.1-8B-Instruct
+```
+
+En local, `npm run dev` expose aussi `/api/chat` grace a la configuration Vite. Sans endpoint serveur ou sans token, le chatbot garde ses reponses locales de secours.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

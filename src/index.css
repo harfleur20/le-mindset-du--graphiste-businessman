@@ -1320,12 +1320,26 @@ h4 {
 
   /* Le bouton lui-même */
   .sticky-btn {
-    width: 80%; 
+    width: min(88vw, 380px);
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
     padding: 15px 0; 
     font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   body {
     padding-bottom: 80px;
+  }
+
+  body.chatbot-open {
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+
+  body.chatbot-open .mobile-sticky-container {
+    display: none;
   }
 }
